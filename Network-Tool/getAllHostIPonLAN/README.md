@@ -44,7 +44,22 @@ $ sudo python3 setup.py install
 
 （在 libraries 目录下运行 `$ make`）
 
-### uage
+### Install 完整命令
+```shell
+<path>/ $ git clone https://github.com/AceLin2016/LINUX.git
+<path>/ $ cd LINUX/Network-Tool/getAllHostIPonLAN/
+<path>/LINUX/Network-Tool/getAllHostIPonLAN/ $ cd libraries
+<path>/LINUX/Network-Tool/getAllHostIPonLAN/libraries/ $ make
+...running compiler...
+<path>/LINUX/Network-Tool/getAllHostIPonLAN/libraries/ $ sudo cp ./bin/nmap /usr/local/bin/
+<path>/LINUX/Network-Tool/getAllHostIPonLAN/libraries/ $ cd ../
+<path>/LINUX/Network-Tool/getAllHostIPonLAN/ $ python3 setup.py sdist
+<path>/LINUX/Network-Tool/getAllHostIPonLAN/ $ sudo python3 setup.py install
+<path>/LINUX/Network-Tool/getAllHostIPonLAN/ $ ## Tester:
+<path>/LINUX/Network-Tool/getAllHostIPonLAN/ $ ./Example/main.py 192.168.1.0/24 ON ## 这一行在下面 "usage" 解释 
+```
+
+### usage
 
   使用 getAllHostIPonLAN/ 下的 Example/main.py 测试
 ```shell
