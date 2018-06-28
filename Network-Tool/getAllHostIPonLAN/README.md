@@ -10,6 +10,18 @@
 
   N/A
 
+
+
+## v0.0.2 code 更新
+
+​    基于 v0.0.1 的 简单输出结果到 /tmp/ 目录下的文件， 使用正则表达式re库，获取IP Address 到一个LIST中。
+
+调用函数 getAllHostIPonLAN() 即返回保存所有 IP 的 LIST 。
+
+ 运行方式和 v0.0.1 一致。（只是提取了有效信息，将输出结果简化）
+
+
+
 ## v0.0.1 basic uage
 
 work path tree:

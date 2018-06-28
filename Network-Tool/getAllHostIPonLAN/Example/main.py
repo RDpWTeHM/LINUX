@@ -58,24 +58,33 @@ doDebug = False
 ###
 def main():
 	argc = len(sys.argv)
-	if argc < 2:
+	if argc != 3:
 		print("Error command")
-		print("usage: {} <ip segement>".format(sys.argv[0]))
-		print("\tlike: {} 192.168.1.0/24".format(sys.argv[0]))
+		print("usage: {} <ip segement> <STDOUT_flag>".format(sys.argv[0]))
+		print("\tlike: {} 192.168.1.0/24 ON(or OFF)".format(sys.argv[0]))
 		sys.exit(1)
 
 	## else, check ip segement Enter right!
 	print("ip segement: {}".format(sys.argv[1]))
 
 	## STDOUT_flag = 'OFF/ON'
-	if argc == 3:
-		STDOUT_flag = sys.argv[2]
+	STDOUT_flag = sys.argv[2]
 
 	networkTool = getAllHostIPonLAN.NetworkTool()
 	segement = sys.argv[1]
-	networkTool.getAllHostIPonLAN(segement, STDOUT_flag)
+	allIPAddr = networkTool.getAllHostIPonLAN(segement)
 
 
+	if STDOUT_flag == "ON":
+		print(allIPAddr)
+	else:
+		try: 
+			with open("/tmp/allLANHostIP.txt", "w") as fp:
+				for eachIP in allIPAddr:
+					print("{}".format(eachIP), file=fp)
+		except:
+			print("something wrong when print out Result!", file=sys.stderr)
+#END main().
 
 if __name__ == '__main__':
 	main()
