@@ -9,7 +9,10 @@ MAKE = make
 
 ## run all need check ./bin/nmap exist???
 ### check "$ make" permission!!!!
-all:
+all: ./bin/nmap
+
+
+./bin/nmap: ./nmap-*.tar.bz2
 ## get nmap tar path (full name)
 
 ## Extra nmap.
@@ -22,6 +25,10 @@ all:
 ## run Make
 	$(MAKE) --directory=nmap-7.70
 
+## create bin/ directory
+	mkdir bin/
+
+## save the build result program.
 	cp ./nmap-7.70/nmap ./bin/
 
 ## -[o] joseph, update cp ./nmap-7.70/nmap ./bin/
