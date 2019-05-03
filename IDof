@@ -1,0 +1,33 @@
+#!/usr/bin/python3
+"""simplify "ps -ejf | grep <processing name>" command
+Usage:
+    $ ####  Set Up
+    $ cp IDof ~/bin/IDof
+    $ chmod +x ~/bin/IDof
+    $ 
+    $ IDof python
+    $ IDof apache
+    $ IDof <processing name>
+"""
+
+import sys
+import os
+
+
+doDebug=False
+
+
+def main():
+	argc = len(sys.argv)
+	
+	if argc!=2:
+		print ( "usage: %s <processing name>" %sys.argv[0], file=sys.stderr)
+		sys.exit(1)
+	
+	cmd = "ps -ejf | grep PID | grep -v \"grep\" && ps -ejf | grep \"%s\" | grep -v \"grep\" | grep -v \"%s\"" %(sys.argv[1], sys.argv[0]) 
+	os.system(cmd)
+	
+	sys.exit(0)
+
+if __name__ == "__main__":
+	main()
