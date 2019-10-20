@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Typora
+GenericName=Editor
+Comment=Typroa - a markdown editor
+Exec="/opt/Typora-linux-x64/Typora" %U
+Icon=/opt/Typora-linux-x64/resources/app/asserts/icon/icon_256x256.png
+Terminal=false
+Categories=Markdown;
+StartupNotify=false
+Type=Application
