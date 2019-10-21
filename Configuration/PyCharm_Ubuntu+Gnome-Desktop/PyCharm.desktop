@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=PyCharm
+GenericName=Editor
+Comment=PyCharm - A Python IDE
+Exec="/opt/pycharm-community-2019.1.3/bin/pycharm.sh" %U
+Icon=/opt/pycharm-community-2019.1.3/bin/pycharm.png
+Terminal=false
+Categories=TextEditor;Development;
+StartupNotify=false
+Type=Application
