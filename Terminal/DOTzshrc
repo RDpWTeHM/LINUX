@@ -1,0 +1,100 @@
+...
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+###############################################################
+# User Add Start
+###############################################################
+
+##################################################
+# oh-my-zsh
+##################################################
+###
+### plugins configuration
+###
+source $HOME/.oh-my-zsh/plugins/incr/incr*.zsh
+
+###
+### remote(ssh) keyboard enter bug fix
+###
+#Rebind HOME and END to do the decent thing:
+bindkey '\e[1~' beginning-of-line
+bindkey '\e[4~' end-of-line
+case $TERM in (xterm*)
+bindkey '\eOH' beginning-of-line
+bindkey '\eOF' end-of-line
+esac
+
+#To discover what keycode is being sent, hit ^v
+#and then the key you want to test.
+
+#And DEL too, as well as PGDN and insert:
+bindkey '\e[3~' delete-char
+bindkey '\e[6~' end-of-history
+bindkey '\e[2~' redisplay
+
+#Now bind pgup to paste the last word of the last command,
+bindkey '\e[5~' insert-last-word
+
+
+##################################################
+# LINUX env
+##################################################
+###
+### PATH
+###
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/bin:$PATH
+
+#################################################
+# Python
+#################################################
+###
+### virutlaenv
+###
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/dev
+source $HOME/.local/bin/virtualenvwrapper.sh
+
+
+
+###################################################
+# effective terminal tools
+###################################################
+###
+### thefuck
+###
+eval $(thefuck --alias)
+# You can use whatever you want as an alias, like for Mondays:
+eval $(thefuck --alias FUCK)
+
+
+###################################################
+# effective alias
+###################################################
+alias ls='ls -F --human --color'
+alias ll='ls -lF -t'
+
+alias gh='history|grep'
+alias unsetproxy='unset all_proxy && unset ALL_PROXY'
+#alias setproxy='export all_proxy=http://127.0.0.1:12333'
+
+alias gnetstatus='sudo netstat -antp | grep '
+
+
+####################################################
+# node.js
+####################################################
+###
+### speed up npm
+###
+alias cnpm="npm --registry=https://registry.npm.taobao.org \
+--cache=$HOME/.npm/.cache/cnpm \
+--disturl=https://npm.taobao.org/dist \
+--userconfig=$HOME/.cnpmrc"
+
+
+
