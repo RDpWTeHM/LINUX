@@ -1,0 +1,9 @@
+#You can set the default proxies for Wget to use for http, https, and ftp.
+# They will override the value in the environment.
+#https_proxy = http://<proxy server ip|domain>:<port>
+http_proxy = http://<ip|domain>:<port>
+#ftp_proxy = http://<ip|domain>:<port>
+
+# If you do not want to use proxy at all, set this to off.
+use_proxy = on
+
