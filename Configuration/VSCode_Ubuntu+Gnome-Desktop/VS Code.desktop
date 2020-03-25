@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=VS Code
+GenericName=Editor
+Comment=Visual Studio Code
+Exec="/<path>/<to>/VSCode-linux-x64/bin/code" %U
+Icon=/<path>/<to>/VSCode-linux-x64/resources/app/resources/linux/code.png
+Terminal=false
+Categories=Editor;
+StartupNotify=false
+Type=Application
